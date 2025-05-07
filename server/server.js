@@ -8,6 +8,8 @@ const { sequelize, Sequelize } = require('../models');
 const recommendationsRouter = require('../routes/recommendationsRoutes');
 const preferenceRouter = require('../routes/preferenceRoutes');
 const favoriteRouter = require('../routes/favoriteRoutes');
+const likedRouter = require('../routes/userLikedRoutes');
+const dislikedRouter = require('../routes/userDislikedRoutes');
 
 
 
@@ -20,6 +22,8 @@ app.use(express.json())
 app.use(cookieParser())
 
 //ROUTING MIDDLEWARES
+app.use("/disliked", dislikedRouter)
+app.use("/liked", likedRouter)
 app.use("/favorite", favoriteRouter)
 app.use("/recommendations", recommendationsRouter)
 app.use("/preferences", preferenceRouter)

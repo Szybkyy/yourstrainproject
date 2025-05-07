@@ -1,11 +1,11 @@
 const express = require('express');
 const userRouter = require('./userRoutes');
 const checkRole = require('../middleware/roleMiddleware');
-const {getRecommendedStrains} = require('../controllers/recommendationsController');
+const runHybrid = require('../engine/runHybridRecommendations');
 
 const recommendationsRouter = express.Router()
 
-recommendationsRouter.get('/get', checkRole(['user','admin','mod']), getRecommendedStrains)
+recommendationsRouter.get('/get', checkRole(['user','admin','mod']), runHybrid)
 
 
 

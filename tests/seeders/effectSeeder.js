@@ -4,18 +4,17 @@ const {Effect} = require("../../models");
 
 
 const effectsData = [
-    'energetic',
-    'focused',
-    'aroused',
-    'sleepy',
-    'hungry',
-    'dizzy',
-    'euphoric',
-    'relaxed',
-    'happy',
-    'creative',
-    'uplifted'
-  ] 
+  'happy',
+  'relaxed',
+  'euphoric',
+  'creative',
+  'sleepy',
+  'hungry',
+  'energetic',
+  'uplifted',
+  'talkative',
+  'focused'
+]
   
   const effectInstances = []
   const seedEffects = async () => {  

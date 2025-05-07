@@ -9,6 +9,8 @@ module.exports = (sequelize,Sequelize) => {
     Strain.associate = (models) => {
         Strain.belongsToMany(models.Effect,{through: models.StrainEffects, foreignKey: "strain_id"})
         Strain.hasMany(models.FavoriteStrain, { foreignKey: "strain_id" });
+        Strain.belongsToMany(models.User, {through: models.UserLiked, foreignKey: "strain_id", otherKey: "user_id"})
+        Strain.belongsToMany(models.User, {through: models.UserDisliked, foreignKey: "strain_id", otherKey: "user_id"})
     }
 
     return Strain
